@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina AI Study Dashboard</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">LUMINA<span>AI</span></div>
+        <div class="nav-actions">
+            <span id="userEmailDisplay" class="user-info"></span>
+            <button id="authBtn" class="login-btn">Login</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <!-- Card 1: AI Summarizer -->
+        <section class="glass-card">
+            <div class="card-icon"><i class="fas fa-file-signature"></i></div>
+            <h2>Summarize Notes</h2>
+            <textarea id="summaryInput" placeholder="Paste text or describe your notes..."></textarea>
+            
+            <div class="file-upload">
+                <label for="imageUpload" class="custom-file-upload">
+                    <i class="fas fa-camera"></i> Upload Image/Text
+                </label>
+                <input id="imageUpload" type="file" accept="image/*, .txt"/>
+            </div>
+            
+            <button id="summarizeBtn" class="action-btn">Generate Summary</button>
+            <div id="summaryResult" class="output-box"></div>
+        </section>
+
+        <!-- Card 2: AI Quiz -->
+        <section class="glass-card">
+            <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+            <h2>AI Quiz Generator</h2>
+            <p>Generate 3 MCQs from any topic.</p>
+            <input type="text" id="quizTopic" placeholder="Topic (e.g. Quantum Physics)">
+            <button id="generateQuizBtn" class="action-btn">Create Quiz</button>
+            <div id="quizResult" class="output-box"></div>
+        </section>
+
+        <!-- Card 3: Study Plan (To-Do) -->
+        <section class="glass-card">
+            <div class="card-icon"><i class="fas fa-list-check"></i></div>
+            <h2>Study Plan</h2>
+            <div class="todo-input">
+                <input type="text" id="todoTask" placeholder="Add a task...">
+                <button id="addTodoBtn"><i class="fas fa-plus"></i></button>
+            </div>
+            <ul id="todoList" class="todo-items"></ul>
+        </section>
+    </main>
+
+    <!-- Floating AI Bot -->
+    <div id="floatingAiBtn" class="ai-fab">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- Firebase Auth Scripts (V9 Modular) -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
